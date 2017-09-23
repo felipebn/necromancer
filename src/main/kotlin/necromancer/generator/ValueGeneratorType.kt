@@ -20,7 +20,10 @@ enum class ValueGeneratorType : ValueGenerator{
 	
 	NUMBER{
 		override fun generate(vararg args: String): String {
-			TODO("must have a min and max")
+			val min : Long? = args[0].toLongOrNull()
+			val max : Long? = args[1].toLongOrNull()
+			
+			return Random(System.currentTimeMillis()).nextLong().toString();
 		}
 	},
 	
